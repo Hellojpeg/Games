@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -10,6 +11,9 @@ import 'viewmodels/auth_viewmodel.dart';
 /// Initialises Supabase before running the Flutter widget tree.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialise Google Mobile Ads SDK.
+  await MobileAds.instance.initialize();
 
   // Initialise Supabase with your project URL and anon key.
   // Replace the placeholder values with your actual Supabase credentials.
