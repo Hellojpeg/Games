@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../viewmodels/auth_viewmodel.dart';
+import '../viewmodels/spin_viewmodel.dart';
 import 'login_screen.dart';
+import 'spin_screen.dart';
 
 /// Dashboard screen – shown to authenticated users after a successful login.
 class DashboardScreen extends StatelessWidget {
@@ -51,6 +53,15 @@ class DashboardScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               FilledButton.icon(
+                icon: const Icon(Icons.casino),
+                label: const Text('Play Spin Game'),
+                onPressed: () => _openSpinGame(context),
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size(200, 48),
+                ),
+              ),
+              const SizedBox(height: 12),
+              FilledButton.icon(
                 icon: const Icon(Icons.logout),
                 label: const Text('Logout'),
                 onPressed: () => _logout(context),
@@ -72,6 +83,17 @@ class DashboardScreen extends StatelessWidget {
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(builder: (_) => const LoginScreen()),
       (_) => false,
+    );
+  }
+
+  void _openSpinGame(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (_) => ChangeNotifierProvider(
+          create: (_) => SpinViewModel(),
+          child: const SpinScreen(),
+        ),
+      ),
     );
   }
 }

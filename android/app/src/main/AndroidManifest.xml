@@ -31,6 +31,11 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <!-- Google Mobile Ads: replace with your real AdMob App ID in production.
+             The value below is Google's official test App ID. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
     </application>
     <!-- Required for network access -->
     <uses-permission android:name="android.permission.INTERNET"/>
