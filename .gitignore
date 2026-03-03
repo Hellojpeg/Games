@@ -1,0 +1,56 @@
+# Dart / Flutter build artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.g.dart
+
+# Android
+android/.gradle/
+android/local.properties
+android/captures/
+android/key.properties
+*.keystore
+*.jks
+
+# iOS
+ios/.symlinks/
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/flutter_export_environment.sh
+
+# Xcode
+*.xcworkspace
+!default.xcworkspace
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# pub cache
+.pub-cache/
+
+# Generated files (regenerate with: flutter pub run build_runner build)
+# *.mocks.dart files are committed so CI does not need build_runner
+
